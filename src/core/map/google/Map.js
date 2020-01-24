@@ -12,16 +12,16 @@ export default class Map {
         this.name = name;
 
         if(this.map()){
-            this.reuse(elementWrapper, defaultZoom);
+            this.reuse(elementWrapper);
         }
         else{
-            this.create(elementWrapper, defaultZoom);
+            this.create(elementWrapper);
         }
         this.setupNewMap(defaultZoom, onClick);
     }
     setupNewMap(zoom, onClick){
         this.cleanOldMap();
-        this.map().setZoom(zoom);
+        this.setZoom(zoom);
         //if we don't add any of markers/geolocation/etc we need to setCenter or the map won't appear
         this.setCenterToMoscow();
 
@@ -62,6 +62,17 @@ export default class Map {
     }
     setCenter(lat, lng){
         this.map().setCenter({lat, lng});
+    }
+    setZoom(zoom){
+        this.map().setZoom(zoom);
+    }
+    zoomAfterBoundsChanged(zoom){
+        const
+            self = this,
+            onBoundsChanged = google.maps.event.addListenerOnce(this.map(), 'bounds_changed', ()=>{
+                self.setZoom(zoom);
+                google.maps.event.removeListener(onBoundsChanged);
+            });
     }
 
 

@@ -24,9 +24,14 @@
         },
         watch: {
             events(){
-                this.markerFactory.setAll(this.events);
+                if(this.events.length){
+                    this.markerFactory.setAll(this.events);
 
-                if(!this.events.length){
+                    if(this.events.length === 1){
+                        this.map.zoomAfterBoundsChanged(Config.map.zoom);
+                    }
+                }
+                else{
                     this.map.setCenterToMoscow();
                 }
             }
@@ -50,6 +55,10 @@
 
             if(this.events.length){
                 this.markerFactory.setAll(this.events);
+
+                if(this.events.length === 1){
+                    this.map.zoomAfterBoundsChanged(Config.map.zoom);
+                }
             }
         },
         destroyed(){
