@@ -48,7 +48,9 @@ const actions = {
 
         if(VuexFormHelper.isSuccess(result.status)){
             await dispatch(setCoordinates, result);
+            return true;
         }
+        return false;
     },
     async [ setCoordinates ]({ dispatch, commit }, {lat, lng}){
         commit(setCoordinates, {lat, lng});

@@ -79,6 +79,7 @@
 
     const { mapState: mapCategoryState, mapActions: mapCategoryActions } = createNamespacedHelpers('eventCategory');
     const { mapState: mapUserState } = createNamespacedHelpers('user');
+    const { mapGetters: mapAuthGetters } = createNamespacedHelpers('auth');
     const { mapState, mapActions } = createNamespacedHelpers('home');
     const { mapFields } = createHelpers({
         getterType: 'home/getEditableFilterField',
@@ -90,13 +91,12 @@
         components: {MenuSwitcher, GeolocationButton, HomeFilterContainer, Sidebar, ScrollableLinksCarousel, HomeEventList},
         mixins: [sidebarHandler],
         async created(){
-            if(!this.user || this.user.geolocation){
-                this.runGeolocation();
-            }
-            else{
-                this.loadAll();
-            }
             this.loadCategories();
+
+            if ((this.isGuest || this.user.geolocation) && await this.runGeolocation()){
+                return;
+            }
+            this.loadAll();
         },
         computed: {
             activeCategoryId(){
@@ -107,6 +107,7 @@
             },
             ...mapCategoryState(['categories']),
             ...mapUserState(['user']),
+            ...mapAuthGetters(['isGuest']),
             ...mapState(['mapShown', 'filter']),
             ...mapFields(['text'])
         },
