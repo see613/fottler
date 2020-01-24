@@ -48,6 +48,7 @@
             <label class="left-label">Когда?</label>
 
             <input type="datetime-local"
+                   class="underlined"
                    placeholder="Когда?"
                    v-model.lazy="datetime">
             <error :text="errors.datetime"></error>

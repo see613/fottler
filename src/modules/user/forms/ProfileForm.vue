@@ -13,6 +13,7 @@
         <list-row class="right bb">
             <label class="left-label">Дата рождения</label>
             <input type="date"
+                   class="underlined"
                    v-model.lazy="birthday">
             <error :text="errors.birthday"></error>
         </list-row>

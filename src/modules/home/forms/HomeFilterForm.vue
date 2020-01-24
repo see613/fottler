@@ -39,6 +39,7 @@
             <label class="left-label">Когда?</label>
 
             <input type="date"
+                   class="underlined"
                    placeholder="Когда?"
                    v-model.lazy="date">
         </list-row>
