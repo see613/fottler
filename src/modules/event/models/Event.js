@@ -35,7 +35,9 @@ export default class Event extends Model {
     static validationRules = {
         add: {
             title: yup.string().trim().required(Config.error.isEmpty),
-            about: yup.string().trim().max(Config.event.about.maxLength, ''),
+            about: yup.string().trim()
+                .required(Config.error.isEmpty)
+                .max(Config.event.about.maxLength, ''),
             //todo 'Максимальный лимит в '+Config.event.about.maxLength+' символов.'
             //todo .required(Config.error.isEmpty),
 

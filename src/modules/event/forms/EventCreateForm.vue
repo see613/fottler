@@ -84,11 +84,12 @@
                    :value="about"
                    @input="about = $event.target.value"
                    @keyup.enter="onSubmit">
-            <error :text="errors.about"
-                   class="pl"></error>
 
             <div class="field-description pl"
                  :class="aboutSymbolsLeft<0 ? 'red' : ''">{{aboutSymbolsString}}</div>
+
+            <error :text="errors.about"
+                   class="pl"></error>
         </list-row>
 
         <div class="list-row">
