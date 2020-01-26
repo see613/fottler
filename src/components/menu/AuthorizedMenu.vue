@@ -46,14 +46,12 @@
                     <router-link to="/favorites">Избранное</router-link>
                 </list-row>
 
-<!--//todo
-
                 <list-row icon="bell"
                           icon-top="10"
                           :class="user.info.unread_notifications>0 ? 'unread' : ''">
                     <router-link to="/notifications">Уведомления</router-link>
                 </list-row>
--->
+
                                 <list-row icon="support"
                                           icon-top="10">
                                     <router-link to="/feedback">Поддержка</router-link>
