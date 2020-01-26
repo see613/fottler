@@ -38,9 +38,6 @@ export default class Event extends Model {
             about: yup.string().trim()
                 .required(Config.error.isEmpty)
                 .max(Config.event.about.maxLength, ''),
-            //todo 'Максимальный лимит в '+Config.event.about.maxLength+' символов.'
-            //todo .required(Config.error.isEmpty),
-
             //accept formats 2017-11-12 11:23 | 2017-11-12T11:23
             datetime: yup.string().trim()
                 .required(Config.error.isEmpty)

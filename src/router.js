@@ -18,6 +18,11 @@ const router = new Router({
             component: Home,
         },
         {
+            path: '/event/:id(\\d+)',
+            name: 'event',
+            component: () => import('./modules/event/views/EventSingle.vue')
+        },
+        {
             path: '/feedback',
             name: 'feedback',
             component: () => import('./modules/feedback/views/Feedback.vue')

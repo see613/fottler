@@ -32,6 +32,7 @@ export const runGeolocation = 'runGeolocation';
 export const showMap = 'showMap';
 export const hideMap = 'hideMap';
 export const changeUser = 'changeUser';
+export const changeEvent = 'changeEvent';
 
 
 

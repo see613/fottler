@@ -6,7 +6,7 @@
         <div class="modal-inner">
 
             <div class="header">
-                <div class="headline"
+                <div class="headline truncate-text"
                      v-if="headline">{{headline}}</div>
 
                 <a href="#"

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import eventCategory from '@/modules/eventCategory/store'
 import event from '@/modules/event/store/event'
+import eventSingle from '@/modules/event/store/eventSingle'
 import eventUsers from '@/modules/event/store/eventUsers'
 import eventMessages from '@/modules/event/store/eventMessages'
 import userMessages from '@/modules/user/store/userMessages'
@@ -25,6 +26,7 @@ export default new Vuex.Store({
   modules: {
       eventCategory,
       event,
+      eventSingle,
       eventUsers,
       eventMessages,
       myEvents,

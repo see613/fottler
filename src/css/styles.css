@@ -237,7 +237,16 @@ p.description {
   border-bottom: 1px solid #e8e8e8;
 }
 
-/* line 128, ../sass/_common.sass */
+/* line 127, ../sass/_common.sass */
+.truncate-text {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+/* line 135, ../sass/_common.sass */
 .body-inner {
   position: relative;
   background: #ffffff;
@@ -251,16 +260,16 @@ p.description {
   box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 139, ../sass/_common.sass */
+/* line 146, ../sass/_common.sass */
 .map-sidebar .content {
   border-top: none !important;
 }
-/* line 142, ../sass/_common.sass */
+/* line 149, ../sass/_common.sass */
 .map-sidebar .content .map {
   height: 350px;
   background: #e8e8e8;
 }
-/* line 145, ../sass/_common.sass */
+/* line 152, ../sass/_common.sass */
 .map-sidebar.home-map-sidebar {
   z-index: 5;
 }
@@ -468,8 +477,8 @@ p.description {
   font-weight: 900;
   font-size: 20px;
   text-align: center;
-  margin: 0 40px;
-  padding-top: 5px;
+  padding: 5px 40px 0;
+  width: 100%;
 }
 /* line 37, ../sass/components/_modal.sass */
 .modal-wrapper > .modal-inner > .header .close-button {
@@ -1548,7 +1557,7 @@ label.radio-wrapper.wide .radio {
 
 /* line 22, ../sass/components/_event.sass */
 .event {
-  height: 160px;
+  height: 180px;
   background: #ffffff;
   border-radius: 6px;
   margin-bottom: 20px;
@@ -1614,7 +1623,17 @@ label.radio-wrapper.wide .radio {
 }
 /* line 72, ../sass/components/_event.sass */
 .event .content-wrapper .title {
+  height: 39.2px;
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  margin: 0 auto;
   font-size: 14px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 /* line 74, ../sass/components/_event.sass */
 .event .content-wrapper .date-wrapper {
@@ -2171,60 +2190,60 @@ label.radio-wrapper.wide .radio {
   margin-top: 10px;
 }
 
-/* line 5, ../sass/pages/_profile.sass */
+/* line 6, ../sass/pages/_profile.sass */
 .profile-main td {
   vertical-align: top;
 }
-/* line 8, ../sass/pages/_profile.sass */
+/* line 9, ../sass/pages/_profile.sass */
 .profile-main td div {
   margin-bottom: 5px;
 }
-/* line 11, ../sass/pages/_profile.sass */
+/* line 12, ../sass/pages/_profile.sass */
 .profile-main td div.city {
   font-size: 14px;
   padding-left: 20px;
   background: url(/images/icons/address.svg) left -2px center no-repeat;
   background-size: 18px 18px;
 }
-/* line 16, ../sass/pages/_profile.sass */
+/* line 17, ../sass/pages/_profile.sass */
 .profile-main td div.edit-button-wrapper {
   padding-left: 20px;
   background: url(/images/icons/edit.svg) left 1px center no-repeat;
   background-size: 14px 14px;
 }
-/* line 22, ../sass/pages/_profile.sass */
+/* line 23, ../sass/pages/_profile.sass */
 .profile-main td div.edit-button-wrapper a, .profile-main td div.open-button-wrapper a {
   color: #a09e9e;
   font-size: 12px;
   font-style: italic;
 }
-/* line 27, ../sass/pages/_profile.sass */
+/* line 28, ../sass/pages/_profile.sass */
 .profile-main td:first-child .avatar {
   border-radius: 100%;
   width: 100px;
   height: 100px;
 }
 @media (min-width: 400px) {
-  /* line 26, ../sass/pages/_profile.sass */
+  /* line 27, ../sass/pages/_profile.sass */
   .profile-main td:first-child {
     text-align: center;
   }
 }
-/* line 35, ../sass/pages/_profile.sass */
+/* line 36, ../sass/pages/_profile.sass */
 .profile-main.condensed td .avatar {
   width: 80px;
   height: 80px;
 }
-/* line 38, ../sass/pages/_profile.sass */
+/* line 39, ../sass/pages/_profile.sass */
 .profile-main.condensed td div {
   margin-bottom: 1px;
 }
-/* line 40, ../sass/pages/_profile.sass */
+/* line 41, ../sass/pages/_profile.sass */
 .profile-main.condensed td:last-child {
   padding-left: 10px;
 }
 
-/* line 44, ../sass/pages/_profile.sass */
+/* line 45, ../sass/pages/_profile.sass */
 .scroller.profile-scroller .item {
   text-align: center;
   vertical-align: top;
@@ -2232,32 +2251,32 @@ label.radio-wrapper.wide .radio {
   margin-bottom: 15px;
   color: #35364f;
 }
-/* line 52, ../sass/pages/_profile.sass */
+/* line 53, ../sass/pages/_profile.sass */
 .scroller.profile-scroller .item > div:first-child {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: -5px;
 }
-/* line 56, ../sass/pages/_profile.sass */
+/* line 57, ../sass/pages/_profile.sass */
 .scroller.profile-scroller .item > div:last-child {
   font-size: 12px;
   line-height: 12px;
 }
 
-/* line 60, ../sass/pages/_profile.sass */
+/* line 61, ../sass/pages/_profile.sass */
 .profile-preferences {
   padding-bottom: 50px;
 }
-/* line 63, ../sass/pages/_profile.sass */
+/* line 64, ../sass/pages/_profile.sass */
 .profile-preferences > div > div {
   padding: 10px 15px 0;
 }
-/* line 66, ../sass/pages/_profile.sass */
+/* line 67, ../sass/pages/_profile.sass */
 .profile-preferences > div > div .tag {
   margin: 0 7px 4px 0;
 }
 
-/* line 69, ../sass/pages/_profile.sass */
+/* line 70, ../sass/pages/_profile.sass */
 .request-bar {
   text-align: center;
   padding: 10px 15px 15px;
@@ -2267,7 +2286,7 @@ label.radio-wrapper.wide .radio {
   -webkit-box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.25);
 }
-/* line 76, ../sass/pages/_profile.sass */
+/* line 77, ../sass/pages/_profile.sass */
 .request-bar .text {
   margin-bottom: 10px;
 }
