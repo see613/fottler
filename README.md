@@ -1,4 +1,4 @@
-# fottler
+# fottler.ru
 
 ## Project setup
 ```
