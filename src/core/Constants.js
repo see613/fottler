@@ -11,6 +11,8 @@ const Constants = {
     EVENT_LIST_MAP: 'EVENT_LIST_MAP',
 
     STRING: 'STRING',
-    INTEGER: 'INTEGER'
+    INTEGER: 'INTEGER',
+
+    UPCOMING: 'upcoming'
 };
 export default Constants;

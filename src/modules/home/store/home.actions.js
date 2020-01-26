@@ -12,11 +12,15 @@ import Event from "@/modules/event/models/Event";
 import Geolocation from "@/core/map/Geolocation";
 import VuexFormHelper from "@/core/form/VuexFormHelper";
 import Config from "@/config/Config";
+import Constants from "@/core/Constants";
 
 const actions = {
     async [ loadAll ](context){
         return await Event.ajaxActionSetAll(context, async()=>{
-            return await Event.getAll({...context.state.filter})
+            return await Event.getAll({
+                type: Constants.UPCOMING,
+                ...context.state.filter
+            })
         });
     },
     async [ chooseCategory ]({ dispatch, commit }, categoryId){
