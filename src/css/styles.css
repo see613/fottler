@@ -274,6 +274,18 @@ p.description {
   z-index: 5;
 }
 
+/* line 155, ../sass/_common.sass */
+.social-share-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+/* line 160, ../sass/_common.sass */
+.social-share-wrapper > span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 /* line 5, ../sass/components/_transition.sass */
 .slide-transition-wrapper {
   overflow: hidden;

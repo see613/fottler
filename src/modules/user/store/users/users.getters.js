@@ -29,17 +29,17 @@ const getters = {
     isFriend: (state, getters) => (id) => {
         const user = getters.getById(id);
 
-        return user.friend_status === User.friendStatuses.friend;
+        return ''+user.friend_status === User.friendStatuses.friend;
     },
     isNoFriendAndNoRequest: (state, getters) => (id) => {
         const user = getters.getById(id);
 
-        return user.friend_status === User.friendStatuses.none;
+        return ''+user.friend_status === User.friendStatuses.none;
     },
     sentFriendRequestToMe: (state, getters) => (id) => {
         const user = getters.getById(id);
 
-        return user.friend_status === User.friendStatuses.requestToMe;
+        return ''+user.friend_status === User.friendStatuses.requestToMe;
     },
 
 

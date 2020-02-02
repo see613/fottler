@@ -4,7 +4,7 @@
             <td>
                 <img :src="avatarUrl"
                      :alt="user.name"
-                     class="avatar max-100">
+                     class="avatar">
             </td>
             <td>
                 <div>{{user.name}}, {{age}}</div>

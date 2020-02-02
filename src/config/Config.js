@@ -1,4 +1,5 @@
 const Config = {
+    baseUrl: 'https://fottler.ru',
     chat: {
         interval: 4000
     },

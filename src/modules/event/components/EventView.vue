@@ -45,6 +45,9 @@
                    class="button yellow-button wide"
                    @click.prevent="$emit('apply', event.id)">Хочу пойти</a>
             </div>
+
+            <event-view-social :title="event.title"
+                               :description="event.about || event.title"></event-view-social>
         </div>
     </div>
 </template>
@@ -53,9 +56,11 @@
     import DateUtil from "@/core/utilities/DateUtil";
     import Event from "@/modules/event/models/Event";
     import User from "@/modules/user/models/User";
+    import EventViewSocial from "@/modules/event/components/EventViewSocial";
 
     export default {
         name: 'EventView',
+        components: {EventViewSocial},
         props: {
             event: Object,
             user: Object
