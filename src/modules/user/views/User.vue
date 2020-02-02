@@ -12,7 +12,7 @@
                     <a href="#"
                        class="button yellow-button w-auto small-padding mt-10"
                        v-if="isNoFriendAndNoRequest(user.id)"
-                       @click.prevent="addFriend">добавить в друзья</a>
+                       @click.prevent="addFriend(user)">добавить в друзья</a>
 
                     <a href="#"
                        class="button yellow-button w-auto mt-10"
