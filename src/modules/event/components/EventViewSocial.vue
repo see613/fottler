@@ -30,11 +30,14 @@
     export default {
         name: 'EventViewSocial',
         props: {
+            id: [Number, String],
             title: String,
             description: String
         },
         computed: {
-            url: ()=>Config.baseUrl +'/',
+            url(){
+                return Config.baseUrl + '/event/' + this.id;
+            },
             fullTitle(){
                 return 'Вилка и Бутылка | '+ this.title;
             }

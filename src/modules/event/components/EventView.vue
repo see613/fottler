@@ -46,7 +46,8 @@
                    @click.prevent="$emit('apply', event.id)">Хочу пойти</a>
             </div>
 
-            <event-view-social :title="event.title"
+            <event-view-social :id="event.id"
+                               :title="event.title"
                                :description="event.about || event.title"></event-view-social>
         </div>
     </div>
