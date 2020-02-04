@@ -71,7 +71,7 @@ function actions(api){
                 user = rootState.user.user,
                 message = {
                     ...getters.newMessage,
-                    datetime: Date.now(),
+                    created_at: Date.now(),
                     is_local: true,
                     user_id: user.id
                 };

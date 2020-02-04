@@ -32,7 +32,7 @@
                 return this.getById(this.message.user_id);
             },
             time(){
-                return DateUtil.time(this.message.datetime);
+                return DateUtil.time(this.message.created_at);
             },
             ...mapGetters(['getById', 'smallAvatarUrl'])
         }

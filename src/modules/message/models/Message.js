@@ -8,7 +8,7 @@ export default class Message extends Model {
         id: null,
         text: '',
         user_id: '',
-        datetime: null,
+        created_at: null,
         is_local: null
     };
 
