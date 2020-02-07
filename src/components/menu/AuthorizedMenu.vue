@@ -33,14 +33,13 @@
                           icon-left="13">
                     <router-link to="/my-events">События</router-link>
                 </list-row>
-<!--//todo
 
                 <list-row icon="message-grey"
                           icon-top="10"
                           :class="user.info.unread_messages>0 ? 'unread' : ''">
                     <router-link to="/my-messages">Сообщения</router-link>
                 </list-row>
--->
+
                 <list-row icon="heart-grey"
                           icon-top="10">
                     <router-link to="/favorites">Избранное</router-link>
