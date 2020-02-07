@@ -14,7 +14,7 @@ export default class Message extends Model {
 
 
     static async add(type, entityId, text){
-        return await ServerRequest.get(ApiConfig.urls.message.add, {
+        return await ServerRequest.post(ApiConfig.urls.message.add, {
             type,
             entity_id: entityId,
             text
