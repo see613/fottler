@@ -13,12 +13,26 @@ const getters = {
     newestMessageId(state, getters){
         const length = getters.messages.length;
 
-        return length ? getters.messages[length-1].id : null;
+        for(let i = length; i--;){
+            const message = getters.messages[i];
+
+            if(!message.is_local){
+                return message.id;
+            }
+        }
+        return null;
     },
     oldestMessageId(state, getters){
         const length = getters.messages.length;
 
-        return length ? getters.messages[0].id : -1;
+        for(let i = 0; i < length; i++){
+            const message = getters.messages[i];
+
+            if(!message.is_local){
+                return message.id;
+            }
+        }
+        return -1;
     },
 
 
