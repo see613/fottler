@@ -3,6 +3,9 @@ import moment from "moment";
 export default class DateUtil {
 
     static toHumanReadable(date){
+        moment.updateLocale('ru', {
+            weekdays: 'вс_пн_вт_ср_чт_пт_сб'.split('_')
+        });
         return moment(date).locale('ru').calendar();
     }
     static getAgeByBirthDate(dateString){
