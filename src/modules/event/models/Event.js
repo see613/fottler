@@ -28,7 +28,7 @@ export default class Event extends Model {
         max_males_number: 0,
         max_females_number: 0,
         picture: '',
-        is_favorite: null,
+        is_favourite: null,
         status: null,//status in event: applied a request, member, owner, etc
         owner_id: null
     };

@@ -9,7 +9,7 @@
 
             <a v-if="!isGuest"
                href="#"
-               :class="{like: true, liked: event.is_favorite}"
+               :class="{like: true, liked: event.is_favourite}"
                @click.prevent="switchFavorite"></a>
         </div>
 
@@ -38,7 +38,7 @@
                    class="button yellow-button wide"
                    @click.prevent="$emit('open-chat', event.id)">открыть чат</a>
 
-                <span v-else-if="applied">Ваша заявка на рассмотрении</span>
+                <span v-else-if="applied">disabled открыть чат</span>
 
                 <a v-else
                    href="#"
@@ -92,7 +92,7 @@
         },
         methods: {
             switchFavorite(){
-                this.event.is_favorite
+                this.event.is_favourite
                     ? this.$emit('remove-from-favorites', this.event.id)
                     : this.$emit('add-to-favorites', this.event.id);
             }

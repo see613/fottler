@@ -17,7 +17,7 @@ export default class EventTest extends Model {
         max_males_number: 5,
         max_females_number: 7,
         picture: 'sS9mZKueqy.jpg',
-        is_favorite: null,
+        is_favourite: null,
         status: null,//status in event: applied a request, member, owner, etc
         owner_id: null
     };

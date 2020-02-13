@@ -9,7 +9,7 @@
                 <!-- //todo <div class="distance">0.2 км</div>-->
                 <a v-if="!isGuest"
                    href="#"
-                   :class="{like: true, liked: item.is_favorite}"
+                   :class="{like: true, liked: item.is_favourite}"
                    @click.stop.prevent="switchFavorite"></a>
             </div>
         </div>
@@ -56,7 +56,7 @@
         },
         methods: {
             switchFavorite(){
-                this.item.is_favorite
+                this.item.is_favourite
                     ? this.$emit('remove-from-favorites')
                     : this.$emit('add-to-favorites');
             }
