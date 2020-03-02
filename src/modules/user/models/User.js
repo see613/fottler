@@ -155,13 +155,24 @@ export default class User extends Model {
     static preferencesToIdsArray(preferences){
         return preferences.map(item => ''+item.id);
     }
+    static preferencesStringToIdsArray(preferences){
+        return preferences.split(',');
+    }
     static formatAfterLoad(user){
         if(user.food_preferences){
-            user.food_preferences = User.preferencesToIdsArray(user.food_preferences);
+            user.food_preferences = User.preferencesStringToIdsArray(user.food_preferences);
         }
+        else{
+            user.food_preferences = [];
+        }
+
         if(user.drink_preferences){
-            user.drink_preferences = User.preferencesToIdsArray(user.drink_preferences);
+            user.drink_preferences = User.preferencesStringToIdsArray(user.drink_preferences);
         }
+        else{
+            user.drink_preferences = [];
+        }
+
         if(user.lat){
             user.lat = Number(user.lat);
         }

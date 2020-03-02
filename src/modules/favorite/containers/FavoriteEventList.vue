@@ -3,25 +3,24 @@
         <event-list-container :events="events"
                               @item-click="open"></event-list-container>
 
-        <event-view-container :event="openedEvent"
-                              :shown="isAnyEventOpened"
-                              :mapIsOpened="mapIsOpened"
-                              :chatIsOpened="chatIsOpened"
-                              :membersIsOpened="membersIsOpened"
+        <loadable-event-view-container :event-id="openedEvent.id"
+                                       :shown="isAnyEventOpened"
+                                       :mapIsOpened="mapIsOpened"
+                                       :chatIsOpened="chatIsOpened"
+                                       :membersIsOpened="membersIsOpened"
 
-                              @close="close"
-                              @open-map="openMap"
-                              @open-members="openMembers"
-                              @open-chat="openChat"
-                              @close-map="closeMap"
-                              @close-chat="closeChat"
-                              @close-members="closeMembers"></event-view-container>
+                                       @close="close"
+                                       @open-map="openMap"
+                                       @open-members="openMembers"
+                                       @open-chat="openChat"
+                                       @close-map="closeMap"
+                                       @close-chat="closeChat"
+                                       @close-members="closeMembers"></loadable-event-view-container>
     </div>
 </template>
 
 <script>
     import EventListContainer from "@/modules/event/containers/EventListContainer";
-    import EventViewContainer from "@/modules/event/containers/EventViewContainer";
     import { createNamespacedHelpers } from 'vuex'
     import {open, close} from "@/store/types";
     import {
@@ -32,12 +31,13 @@
         openMap,
         openMembers
     } from "@/modules/event/store/event/event.types";
+    import LoadableEventViewContainer from "@/modules/event/containers/LoadableEventViewContainer";
 
     const { mapState, mapGetters, mapActions } = createNamespacedHelpers('favorite');
 
     export default {
         name: 'FavoriteEventList',
-        components: {EventViewContainer, EventListContainer},
+        components: {LoadableEventViewContainer, EventListContainer},
         computed: {
             ...mapState([
                 'mapIsOpened',
