@@ -162,6 +162,16 @@ export default class Event extends Model {
     static formatBeforeSave(event){
         return {
             ...event,
+            max_males_number: parseInt(
+                event.max_males_number
+                    .toString()
+                    .replace(/^0+/, '')
+            ) || 0,
+            max_females_number: parseInt(
+                event.max_females_number
+                    .toString()
+                    .replace(/^0+/, '')
+            ) || 0,
             datetime: event.datetime
                 .replace('T', ' ')
                 .replace(/(\d{2}:\d{2}).*/, '$1')//removing of seconds
@@ -169,11 +179,19 @@ export default class Event extends Model {
     }
     static formatAfterLoad(event){
         if(event.food_preferences){
-            event.food_preferences = Event.preferencesToIdsArray(event.food_preferences);
+            event.food_preferences = Event.preferencesStringToIdsArray(event.food_preferences);
         }
+        else{
+            event.food_preferences = [];
+        }
+
         if(event.drink_preferences){
-            event.drink_preferences = Event.preferencesToIdsArray(event.drink_preferences);
+            event.drink_preferences = Event.preferencesStringToIdsArray(event.drink_preferences);
         }
+        else{
+            event.drink_preferences = [];
+        }
+
         if(event.lat){
             event.lat = Number(event.lat);
         }
@@ -187,5 +205,8 @@ export default class Event extends Model {
     }
     static preferencesToIdsArray(preferences){
         return preferences.map(item => ''+item.id);
+    }
+    static preferencesStringToIdsArray(preferences){
+        return preferences.split(',');
     }
 }
