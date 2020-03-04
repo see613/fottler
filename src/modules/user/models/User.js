@@ -81,7 +81,8 @@ export default class User extends Model {
     };
     static phoneMask = {
         prefix: '+7',
-        mask: ' (###) ###-##-##'
+        mask: ' (###) ###-##-##',
+        mask2: ' ###-###-##-##'
     };
 
 
@@ -152,12 +153,6 @@ export default class User extends Model {
         }
         return false;
     }
-    static preferencesToIdsArray(preferences){
-        return preferences.map(item => ''+item.id);
-    }
-    static preferencesStringToIdsArray(preferences){
-        return preferences.split(',');
-    }
     static formatAfterLoad(user){
         if(user.food_preferences){
             user.food_preferences = User.preferencesStringToIdsArray(user.food_preferences);
@@ -183,6 +178,12 @@ export default class User extends Model {
     }
     static formatAllAfterLoad(users){
         return users.map(user => User.formatAfterLoad(user));
+    }
+    static preferencesToIdsArray(preferences){
+        return preferences.map(item => ''+item.id);
+    }
+    static preferencesStringToIdsArray(preferences){
+        return preferences.split(',');
     }
 
 }
