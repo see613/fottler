@@ -8,11 +8,17 @@
             </td>
             <td>
                 <div>{{user.name}}, {{age}}</div>
-                <div class="font-12">{{formattedPhone}}</div>
+                <div class="font-12"
+                     v-if="isMyself">{{formattedPhone}}</div>
                 <div class="city"
                      v-if="user.city">{{user.city}}</div>
 
                 <slot></slot>
+            </td>
+        </tr>
+        <tr v-if="showAbout">
+            <td colspan="2">
+                <div class="about">{{user.about}}</div>
             </td>
         </tr>
     </table>
@@ -26,7 +32,15 @@
     export default {
         name: 'ProfileMain',
         props: {
-            user: Object
+            user: Object,
+            isMyself: {
+                type: Boolean,
+                default: false
+            },
+            showAbout: {
+                type: Boolean,
+                default: true
+            }
         },
         computed: {
             age(){
@@ -36,7 +50,7 @@
                 return User.smallAvatarUrl(this.user.avatar);
             },
             formattedPhone(){
-                const phoneMask = new PhoneMask(User.phoneMask.prefix, User.phoneMask.mask);
+                const phoneMask = new PhoneMask(User.phoneMask.prefix, User.phoneMask.mask2);
 
                 return phoneMask.rawToFormatted(this.user.phone);
             }

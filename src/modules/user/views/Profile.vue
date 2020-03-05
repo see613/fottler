@@ -4,18 +4,16 @@
             <menu-switcher></menu-switcher>
 
             <h2>Мой профиль</h2>
+
+            <a href="#"
+               class="edit-button"
+               @click.prevent="editProfile"></a>
         </div>
 
         <div class="top-panel">
             <div class="padding-around bb">
                 <profile-main :user="user"
-                              :avatarUrl="avatarUrl">
-
-                    <div class="edit-button-wrapper">
-                        <a href="#"
-                           @click.prevent="editProfile">редактировать</a>
-                    </div>
-                </profile-main>
+                              :isMyself="true"></profile-main>
             </div>
 
             <div class="carousel-wrapper">

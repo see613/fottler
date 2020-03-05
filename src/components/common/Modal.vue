@@ -5,6 +5,8 @@
 
         <div class="modal-inner">
 
+            <slot name="over-header"></slot>
+
             <div class="header">
                 <div class="headline truncate-text"
                      v-if="headline">{{headline}}</div>

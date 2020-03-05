@@ -2,10 +2,23 @@
 @import ../mixins
 
 
+.edit-button
+    background: url(/images/icons/edit.svg) center center no-repeat
+    background-size: 16px 16px
+    position: absolute
+    display: block
+    text-decoration: none
+    width: 40px
+    height: 40px
+    top: 5px
+    right: 5px
+
 .profile-main
     td
         vertical-align: top
 
+        .avatar
+            margin-bottom: -13px
         div
             margin-bottom: 5px
 
@@ -14,16 +27,18 @@
                 padding-left: 20px
                 background: url(/images/icons/address.svg) left -2px center no-repeat
                 background-size: 18px 18px
-            &.edit-button-wrapper
-                padding-left: 20px
-                background: url(/images/icons/edit.svg) left 1px center no-repeat
-                background-size: 14px 14px
-            &.edit-button-wrapper,
             &.open-button-wrapper
                 a
                     color: $light-grey5
                     font-size: 12px
                     font-style: italic
+            &.about
+                color: $dark-blue
+                font-size: 12px
+                border: 1px solid $dark-blue1
+                border-radius: 5px
+                padding: 15px
+                text-align: left
         &:first-child
             .avatar
                 border-radius: 100%
@@ -36,6 +51,7 @@
             .avatar
                 width: 80px
                 height: 80px
+                margin-bottom: 0
             div
                 margin-bottom: 1px
             &:last-child
@@ -59,13 +75,18 @@
                 line-height: 12px
 
 .profile-preferences
-    padding-bottom: 50px
+    padding-bottom: 100px
 
-    >div>div
-        padding: 10px 15px 0
+    >div
+        .text-line-through
+            margin-top: 15px
+        .tag-list
+            margin-top: 10px
+            padding-left: 15px
+            padding-right: 15px
 
-        .tag
-            margin: 0 7px 4px 0
+            .tag
+                margin: 0 7px 4px 0
 
 .request-bar
     text-align: center

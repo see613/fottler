@@ -8,17 +8,7 @@
             <profile-user-requests :user="user"></profile-user-requests>
 
             <div class="padding-around bb">
-                <profile-main :user="user">
-                    <a href="#"
-                       class="button yellow-button w-auto small-padding mt-10"
-                       v-if="isNoFriendAndNoRequest(user.id)"
-                       @click.prevent="addFriend(user)">добавить в друзья</a>
-
-                    <a href="#"
-                       class="button yellow-button w-auto mt-10"
-                       v-if="isFriend(user.id)"
-                       @click.prevent="showSidebar">сообщение</a>
-                </profile-main>
+                <profile-main :user="user"></profile-main>
             </div>
 
             <div class="carousel-wrapper">
@@ -46,6 +36,16 @@
             <user-messages v-if="sidebar.shown"
                            :interlocutor="user"></user-messages>
         </table-sidebar>
+
+        <a href="#"
+           class="button yellow-button fixed-add-button"
+           v-if="isNoFriendAndNoRequest(user.id)"
+           @click.prevent="addFriend(user)">добавить в друзья</a>
+
+        <a href="#"
+           class="button yellow-button fixed-add-button"
+           v-if="isFriend(user.id)"
+           @click.prevent="showSidebar">сообщение</a>
     </div>
 </template>
 

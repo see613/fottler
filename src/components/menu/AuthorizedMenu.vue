@@ -4,7 +4,8 @@
              class="padding-around bb pb-12">
             <profile-main class="condensed"
                           :user="user"
-                          :avatarUrl="avatarUrl">
+                          :is-myself="true"
+                          :show-about="false">
 
                 <div class="open-button-wrapper">
                     <router-link to="/profile">открыть профиль</router-link>

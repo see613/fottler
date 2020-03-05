@@ -5,6 +5,11 @@
                :shown="shown"
                @close="$emit('close')">
 
+            <template v-slot:over-header
+                      v-if="applied">
+                <event-view-request-header></event-view-request-header>
+            </template>
+
             <event-view :event="event"
                         :user="user"
                         @open-map="$emit('open-map')"
@@ -72,6 +77,8 @@
     import EventMap from "@/modules/event/components/EventMap";
     import TableSidebar from "@/components/common/TableSidebar";
     import ObjectUtil from "@/core/utilities/ObjectUtil";
+    import EventViewRequestHeader from "@/modules/event/components/EventViewRequestHeader";
+    import Event from "@/modules/event/models/Event";
 
     const { mapActions } = createNamespacedHelpers('event');
     const { mapGetters: mapUserGetters, mapActions: mapUserActions } = createNamespacedHelpers('eventUsers');
@@ -81,7 +88,9 @@
 
     export default {
         name: 'EventViewContainer',
-        components: {TableSidebar, EventMap, EventMessages, EventUserList, Sidebar, EventView, Modal},
+        components: {
+            EventViewRequestHeader,
+            TableSidebar, EventMap, EventMessages, EventUserList, Sidebar, EventView, Modal},
         mixins: [modalHandler],
         props: {
             event: Object,
@@ -101,6 +110,9 @@
             }
         },
         computed: {
+            applied(){
+                return Event.applied(this.event.status);
+            },
             owner(){
                 return this.getOwner(this.event);
             },

@@ -1,7 +1,9 @@
 <template>
     <div>
-        <div class="font-14">{{headline}}</div>
-        <div>
+        <div class="text-line-through">
+            <span class="font-14">{{headline}}</span>
+        </div>
+        <div class="tag-list">
             <span v-for="item in items"
                   :key="item.value"
                   :class="fullItemClass">
