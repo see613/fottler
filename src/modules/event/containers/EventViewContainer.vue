@@ -16,6 +16,7 @@
                         @open-members="$emit('open-members')"
                         @open-chat="$emit('open-chat')"
                         @apply="_apply"
+                        @disabled-chat-click="disabledChatClick"
                         @add-to-favorites="addToFavorites"
                         @remove-from-favorites="removeFromFavorites"></event-view>
         </Modal>
@@ -157,6 +158,9 @@
                 else if(await this[apply](id)){
                     this.showModal(this.modal.types.applySuccess);
                 }
+            },
+            disabledChatClick(){
+                this.showModal(this.modal.types.applySuccess);
             },
             closeSidebar(){
                 this.$emit('close-map');

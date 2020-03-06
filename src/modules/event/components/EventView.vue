@@ -39,7 +39,8 @@
                    @click.prevent="$emit('open-chat', event.id)">открыть чат</a>
 
                 <a v-else-if="applied"
-                   class="button yellow-button wide disabled">открыть чат</a>
+                   class="button yellow-button wide disabled"
+                   @click.prevent="$emit('disabled-chat-click')">открыть чат</a>
 
                 <a v-else
                    href="#"
