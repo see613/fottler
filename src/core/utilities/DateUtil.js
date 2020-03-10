@@ -21,6 +21,7 @@ export default class DateUtil {
         return age;
     }
     static time(date){
+        date = date.trim().replace(' ', 'T');
         const dateObj = new Date(date);
 
         return dateObj.toLocaleTimeString(navigator.language, {
