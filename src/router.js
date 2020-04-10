@@ -56,7 +56,10 @@ const router = new Router({
         {
             path: '/user/:id(\\d+)',
             name: 'user',
-            component: () => import('./modules/user/views/User.vue')
+            component: () => import('./modules/user/views/User.vue'),
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             path: '/favorites',

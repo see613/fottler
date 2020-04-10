@@ -1,9 +1,11 @@
 <template>
     <div>
         <event-list-container :events="events"
+                              :empty-list-text="config.message.nothingFound"
                               @item-click="open"></event-list-container>
 
-        <Sidebar class="right-sidebar w-100"
+        <Sidebar class="right-sidebar w-100 map-sidebar"
+                 headline="На карте"
                  :opened="mapShown"
                  @close="hideMap">
             <event-list-map :events="events"
@@ -41,6 +43,7 @@
     import EventListMap from "@/modules/event/components/EventListMap";
     import Sidebar from "@/components/common/Sidebar";
     import LoadableEventViewContainer from "@/modules/event/containers/LoadableEventViewContainer";
+    import Config from "@/config/Config";
 
     const { mapState, mapGetters, mapActions } = createNamespacedHelpers('myEvents');
 
@@ -48,6 +51,7 @@
         name: 'MyEventsList',
         components: {LoadableEventViewContainer, Sidebar, EventListMap, EventListContainer},
         computed: {
+            config: ()=>Config,
             ...mapState([
                 'mapIsOpened',
                 'chatIsOpened',
