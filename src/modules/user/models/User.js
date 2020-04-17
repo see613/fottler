@@ -69,15 +69,31 @@ export default class User extends Model {
             avatar: yup.string().ensure().required('Загрузите ваш аватар'),
         },
         login1: {
-            phone: yup.string().trim()
+            email: yup.string().trim()
                 .required(Config.error.isEmpty)
-                .length(10, 'Не правильный формат номера телефона')
+                .email('Не правильный формат Email')
         },
         login2: {
-            code: yup.string().trim()
+            password: yup.string().trim()
                 .required(Config.error.isEmpty)
-                .matches(/^\d{4}$/, 'Код должен содержать 4 цифры')
-        }
+        },
+        login2Guest: {
+            password: yup.string().trim()
+                .required(Config.error.isEmpty),
+            passwordRepeat: yup.string().trim()
+                .test(
+                    'passwordRepeatIsCorrect',
+                    'Пароли не совпадают',
+                    function(value){
+                        const password = this.parent.password.trim();
+                        return !password || password === value.trim();
+                    }),
+        },
+        restorePassword: {
+            email: yup.string().trim()
+                .required(Config.error.isEmpty)
+                .email('Не правильный формат Email')
+        },
     };
     static phoneMask = {
         prefix: '+7',
@@ -102,14 +118,17 @@ export default class User extends Model {
     static async edit(params){
         return await ServerRequest.post(ApiConfig.urls.user.edit, params);
     }
-    static async login1(phone){
-        return await ServerRequest.post(ApiConfig.urls.user.login1, {phone});
+    static async login1(email){
+        return await ServerRequest.post(ApiConfig.urls.user.login1, {email});
     }
-    static async login2({phone, code}){
+    static async login2({email, password}){
         return await ServerRequest.post(ApiConfig.urls.user.login2, {
-            phone,
-            verifyCode: code
+            email,
+            password
         });
+    }
+    static async restorePassword(email){
+        return await ServerRequest.post(ApiConfig.urls.user.restorePassword, {email});
     }
     static async changeFriendStatus(user_id, status){
         return await ServerRequest.post(ApiConfig.urls.user.changeFriendStatus, {user_id, status});

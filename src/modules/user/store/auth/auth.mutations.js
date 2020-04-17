@@ -1,5 +1,6 @@
 import {clearErrors, setErrors, resetFields} from "@/store/types";
 import {updateField} from "vuex-map-fields";
+import {setWhetherUserExists} from "@/modules/user/store/auth/auth.types";
 
 const mutations = {
     [ clearErrors ](state){
@@ -9,14 +10,12 @@ const mutations = {
         state.errors = errors;
     },
     [ resetFields ](state){
-        state.phone = '';
-        state.code = '';
+        state.email = '';
+        state.password = '';
+        state.passwordRepeat = '';
     },
-
-
-    //todo remove
-    'login2'(state, code){
-        state.code = code;
+    [ setWhetherUserExists ](state, userExists){
+        state.userExists = userExists;
     },
 
 

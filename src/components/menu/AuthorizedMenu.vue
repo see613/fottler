@@ -52,77 +52,77 @@
                     <router-link to="/notifications">Уведомления</router-link>
                 </list-row>
 
-                                <list-row icon="support"
-                                          icon-top="10">
-                                    <router-link to="/feedback">Поддержка</router-link>
-                                </list-row>
-                            </div>
+                <list-row icon="support"
+                          icon-top="10">
+                    <router-link to="/feedback">Поддержка</router-link>
+                </list-row>
+            </div>
 
-                            <div class="bb">
-                                <list-row icon="plus-grey"
-                                          icon-top="10">
-                                    <router-link to="/create-event">Добавить событие</router-link>
-                                </list-row>
-                            </div>
+            <div class="bb">
+                <list-row icon="plus-grey"
+                          icon-top="10">
+                    <router-link to="/create-event">Добавить событие</router-link>
+                </list-row>
+            </div>
 
-                            <div>
-                                <list-row icon="logout"
-                                          icon-top="10"
-                                          icon-left="16">
-                                    <a href="#"
-                                       @click.prevent="onLogoutClick">Выйти</a>
-                                </list-row>
-                            </div>
-                        </div>
+            <div>
+                <list-row icon="logout"
+                          icon-top="10"
+                          icon-left="16">
+                    <a href="#"
+                       @click.prevent="onLogoutClick">Выйти</a>
+                </list-row>
+            </div>
+        </div>
 
 
-                        <Modal class="service-modal logout-modal"
-                               v-model="modal.shown">
+        <Modal class="service-modal logout-modal"
+               v-model="modal.shown">
 
-                            <p class="mb-25">Вы уверены что хотите выйти?</p>
+            <p class="mb-25">Вы уверены что хотите выйти?</p>
 
-                            <table class="w-100">
-                                <tr>
-                                    <td class="right">
-                                        <a href="#"
-                                           class="button"
-                                           @click.prevent="logout">да</a>
-                                    </td>
-                                    <td class="left">
-                                        <a href="#"
-                                           class="button yellow-button"
-                                           @click.prevent="hideModal">нет</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </Modal>
+            <table class="w-100">
+                <tr>
+                    <td class="right">
+                        <a href="#"
+                           class="button"
+                           @click.prevent="logout">да</a>
+                    </td>
+                    <td class="left">
+                        <a href="#"
+                           class="button yellow-button"
+                           @click.prevent="hideModal">нет</a>
+                    </td>
+                </tr>
+            </table>
+        </Modal>
 
-                    </div>
-                </template>
+    </div>
+</template>
 
-                <script>
-                    import Modal from "@/components/common/Modal";
-                    import modalHandler from "@/mixins/modalHandler";
-                    import ListRow from "@/components/common/ListRow";
-                    import ProfileMain from "@/modules/user/components/ProfileMain";
+<script>
+    import Modal from "@/components/common/Modal";
+    import modalHandler from "@/mixins/modalHandler";
+    import ListRow from "@/components/common/ListRow";
+    import ProfileMain from "@/modules/user/components/ProfileMain";
 
-                    export default {
-                        name: 'AuthorizedMenu',
-                        components: {ProfileMain, ListRow, Modal},
-                        mixins: [modalHandler],
-                        props: {
-                            authorised: Boolean,
-                            user: Object,
-                            avatarUrl: String
-                        },
-                        methods: {
-                            onLogoutClick() {
-                                this.showModal();
-                            },
-                            logout(){
-                                this.hideModal();
-                                this.$emit('logout');
-                            }
-                        }
-                    }
-                </script>
+    export default {
+        name: 'AuthorizedMenu',
+        components: {ProfileMain, ListRow, Modal},
+        mixins: [modalHandler],
+        props: {
+            authorised: Boolean,
+            user: Object,
+            avatarUrl: String
+        },
+        methods: {
+            onLogoutClick() {
+                this.showModal();
+            },
+            logout(){
+                this.hideModal();
+                this.$emit('logout');
+            }
+        }
+    }
+</script>

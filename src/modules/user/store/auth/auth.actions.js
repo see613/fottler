@@ -1,9 +1,15 @@
 import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
-import {initAuth, login, logout, submitLogin1, submitLogin2} from "@/modules/user/store/auth/auth.types";
-import {resetFields, setErrors} from "@/store/types";
+import {
+    initAuth,
+    login,
+    logout,
+    restorePassword, setWhetherUserExists,
+    submitLogin1,
+    submitLogin2, userExists
+} from "@/modules/user/store/auth/auth.types";
+import {resetFields} from "@/store/types";
 import router from '@/router'
-import {showCriticalError} from "@/store/app/app.types";
 import TokenAuth from "@/core/TokenAuth";
 
 const actions = {
@@ -18,67 +24,59 @@ const actions = {
         window.location.reload();
     },
 
-    //todo remove
-    'login2'({ commit }, code){
-        commit('login2', code);
-    },
+    async [ submitLogin1 ]({ commit, state }){
+        const userData = {email: state.email};
 
-    async [ submitLogin1 ]({ dispatch, commit, state }){
-        if(VuexFormHelper.validateOnClient(commit, {phone: state.phone}, User.validationRules.login1)){
-            const result = await User.login1(state.phone);
+        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.login1)){
+            const result = await VuexFormHelper.save(commit, userData, User.login1);
 
-            if(VuexFormHelper.isHttpError(result.status)){
-                //todo global handler should be used for this
-            }
-            else if(VuexFormHelper.isError(result.status)){
-                if(result.errors === 'Verification code has already been sent'){
-                    commit(setErrors, {
-                        code: 'Sms с кодом уже было отправлено'
-                    });
-                    router.push('/login2');
-                }
-                else{
-                    commit(setErrors, result.errors);
-                }
-            }
-            else if(VuexFormHelper.isSuccess(result.status)){
-                //todo remove
-                dispatch('login2', result.code);
-
+            if(result){
+                commit(setWhetherUserExists, result.user_exists);
                 router.push('/login2');
+                return true;
             }
         }
+        return false;
     },
-    async [ submitLogin2 ]({ dispatch, commit, state }){
-        const userData = {
-            phone: state.phone,
-            code: state.code
-        };
+    async [ submitLogin2 ]({ commit, state }){
+        const
+            userData = {
+                email: state.email,
+                password: state.password,
+                passwordRepeat: state.passwordRepeat
+            },
+            validationRules =
+                state.userExists
+                ? User.validationRules.login2
+                : User.validationRules.login2Guest;
 
-        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.login2)){
-            const result = await User.login2(userData);
+        if(VuexFormHelper.validateOnClient(commit, userData, validationRules)){
+            const result = await VuexFormHelper.save(commit, userData, User.login2);
 
-            if(VuexFormHelper.isHttpError(result.status)){
-                //todo global handler should be used for this
-                return false;
-            }
-            else if(result.error){
-                if(result.error === 'invalid_credentials'){
-                    commit(setErrors, {
-                        code: 'Не правильный код'
-                    });
-                }
-                else{
-                    dispatch('app/'+showCriticalError, null, {root:true});
-                }
-                return false;
-            }
-            else{
+            if(result){
                 commit(resetFields);
                 return result;
             }
         }
-    }
+        return false;
+    },
+    async [ restorePassword ]({ commit, state }){
+        const userData = {email: state.email};
+
+        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.restorePassword)){
+            const result = await VuexFormHelper.save(commit, userData, User.restorePassword);
+
+            if(result){
+                commit(setWhetherUserExists, true);
+                return true;
+            }
+        }
+        return false;
+    },
+
+    [ userExists ]({ commit }){
+        commit(setWhetherUserExists, true);
+    },
 };
 export default actions;
 

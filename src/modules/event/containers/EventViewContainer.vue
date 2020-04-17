@@ -34,7 +34,7 @@
                 <p class="mb-0">
                     <a href="#"
                        class="button yellow-button"
-                       @click.prevent="$router.push('/login/')">Войти</a>
+                       @click.prevent="$router.push('/login')">Войти</a>
                 </p>
             </div>
         </Modal>

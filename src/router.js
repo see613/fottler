@@ -122,6 +122,11 @@ const router = new Router({
             component: () => import('./modules/user/views/Login2.vue'),
         },
         {
+            path: '/restore-password',
+            name: 'restorePassword',
+            component: () => import('./modules/user/views/RestorePassword.vue'),
+        },
+        {
             path: '/error404',
             name: 'error404',
             component: () => import('./views/Error404.vue')

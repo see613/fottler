@@ -33,8 +33,9 @@ const ApiConfig = {
                 getAll: '/api/notification/getAll'
             },
             user: {
-                login1: '/api/send_verification_sms',
-                login2: '/oauth/token',
+                login1: '/api/user/emailAuth1',
+                login2: '/api/user/emailAuth2',
+                restorePassword: '/api/user/restorePassword',
                 getInfo: '/api/user/getInfo',
                 edit: '/api/user/edit',
                 getAll: '/api/user/getAll',

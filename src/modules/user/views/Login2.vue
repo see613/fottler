@@ -17,16 +17,25 @@
                     <div class="site-name">Вилка и бутылка</div>
                 </div>
 
-                <h1>Присоединяйтесь</h1>
-                <div class="title">Код из СМС</div>
+                <h1 class="mb-10">Присоединяйтесь</h1>
 
                 <div class="mb-15">
-                    <input type="text"
+                    <input type="password"
                            class="grey-input center"
-                           maxlength="4"
-                           v-model="code"
+                           placeholder="Пароль"
+                           v-model="password"
                            @keyup.enter="onSubmit">
-                    <error :text="errors.code"
+                    <error :text="errors.password"
+                           class="center"></error>
+                </div>
+                <div v-show="!userExists"
+                     class="mb-15">
+                    <input type="password"
+                           class="grey-input center"
+                           placeholder="Пароль ещё раз"
+                           v-model="passwordRepeat"
+                           @keyup.enter="onSubmit">
+                    <error :text="errors.passwordRepeat"
                            class="center"></error>
                 </div>
                 <div class="mb-50">
@@ -59,12 +68,12 @@
         name: 'Login2',
         components: {MenuSwitcher, Error},
         computed: {
-            ...mapState(['errors']),
+            ...mapState(['errors', 'userExists']),
             ...mapGetters(['profileIsNotFilled']),
-            ...mapFields(['code', 'phone'])
+            ...mapFields(['email', 'password', 'passwordRepeat'])
         },
         created(){
-            if(!this.phone){
+            if(!this.email){
                 this.$router.push('/login');
             }
         },

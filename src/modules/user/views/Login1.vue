@@ -18,19 +18,26 @@
                 </div>
 
                 <h1>Присоединяйтесь</h1>
-                <div class="title">По номеру телефона</div>
+                <div class="title">Вход/регистрация</div>
 
                 <div class="mb-15">
-                    <phone-input class="grey-input center"
-                                 v-model="phone"
-                                 @keyup.enter.native="onSubmit"></phone-input>
-                    <error :text="errors.phone"
+                    <input type="text"
+                           class="grey-input center"
+                           placeholder="Ваш Email"
+                           v-model="email"
+                           @keyup.enter="onSubmit">
+                    <error :text="errors.email"
                            class="center"></error>
                 </div>
-                <div class="mb-50">
+                <div class="mb-10">
                     <a href="#"
                        class="button yellow-button wide"
                        @click.prevent="onSubmit">продолжить</a>
+                </div>
+                <div class="mb-40">
+                    <a href="#"
+                       class="link"
+                       @click.prevent="restorePassword">Забыли пароль?</a>
                 </div>
 
             </td>
@@ -40,7 +47,6 @@
 
 <script>
     import Error from "@/components/forms/Error";
-    import PhoneInput from "@/components/forms/PhoneInput";
     import { createHelpers } from 'vuex-map-fields';
     import { createNamespacedHelpers } from 'vuex'
     import {submitLogin1} from "@/modules/user/store/auth/auth.types";
@@ -54,19 +60,19 @@
 
     export default {
         name: 'Login1',
-        components: {MenuSwitcher, PhoneInput, Error},
+        components: {MenuSwitcher, Error},
         computed: {
             ...mapState(['errors']),
-            ...mapFields(['phone'])
+            ...mapFields(['email'])
         },
         methods: {
             async onSubmit(){
                 await this[submitLogin1]();
             },
-            ...mapActions([ submitLogin1
-                //todo remove
-                ,'login2'
-            ])
+            restorePassword(){
+                this.$router.push('/restore-password');
+            },
+            ...mapActions([ submitLogin1 ])
         }
     }
 </script>

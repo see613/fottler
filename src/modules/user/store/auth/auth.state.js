@@ -1,6 +1,8 @@
 const state = {
-    phone: '',
-    code: '',
+    email: '',
+    password: '',
+    passwordRepeat: '',
+    userExists: null,
     errors: {}
 };
 export default state;
