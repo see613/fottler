@@ -127,6 +127,9 @@ export default class User extends Model {
             password
         });
     }
+    static async vkAuth(session){
+        return await ServerRequest.post(ApiConfig.urls.user.vkAuth, session);
+    }
     static async restorePassword(email){
         return await ServerRequest.post(ApiConfig.urls.user.restorePassword, {email});
     }

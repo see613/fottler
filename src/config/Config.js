@@ -58,6 +58,12 @@ const Config = {
         eventListIsEmpty: 'Здесь пока ничего нет',
         nothingFound: 'Ничего не найдено',
         nobodyFound: 'Никто не найден'
-    }
+    },
+    vk: {
+        errorMessages: {
+            not_authorized: 'Вы не разрешили доступ приложению',
+            unknown: 'Вы не авторизовались ВКонтакте'
+        }
+    },
 };
 export default Config;

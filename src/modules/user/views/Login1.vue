@@ -34,12 +34,18 @@
                        class="button yellow-button wide"
                        @click.prevent="onSubmit">продолжить</a>
                 </div>
-                <div class="mb-40">
+                <div class="mb-15">
                     <a href="#"
                        class="link"
                        @click.prevent="restorePassword">Забыли пароль?</a>
                 </div>
 
+                <div class="mb-15">
+                    Или войдите с помощью
+                    <vk-auth @success="onVkAuthorized"></vk-auth>
+                    <error :text="errors.vk"
+                           class="center"></error>
+                </div>
             </td>
         </tr>
     </table>
@@ -49,8 +55,9 @@
     import Error from "@/components/forms/Error";
     import { createHelpers } from 'vuex-map-fields';
     import { createNamespacedHelpers } from 'vuex'
-    import {submitLogin1} from "@/modules/user/store/auth/auth.types";
+    import {afterAuth, submitLogin1, vkAuth} from "@/modules/user/store/auth/auth.types";
     import MenuSwitcher from "@/components/menu/MenuSwitcher";
+    import VkAuth from "@/components/VkAuth";
 
     const { mapState, mapActions } = createNamespacedHelpers('auth');
     const { mapFields } = createHelpers({
@@ -60,7 +67,7 @@
 
     export default {
         name: 'Login1',
-        components: {MenuSwitcher, Error},
+        components: {VkAuth, MenuSwitcher, Error},
         computed: {
             ...mapState(['errors']),
             ...mapFields(['email'])
@@ -69,10 +76,17 @@
             async onSubmit(){
                 await this[submitLogin1]();
             },
+            async onVkAuthorized(session){
+                const result = await this[vkAuth](session);
+
+                if(result){
+                    await this[afterAuth](result);
+                }
+            },
             restorePassword(){
                 this.$router.push('/restore-password');
             },
-            ...mapActions([ submitLogin1 ])
+            ...mapActions([ submitLogin1, vkAuth, afterAuth ])
         }
     }
 </script>

@@ -35,6 +35,7 @@ const ApiConfig = {
             user: {
                 login1: '/api/user/emailAuth1',
                 login2: '/api/user/emailAuth2',
+                vkAuth: '/api/user/vkAuth',
                 restorePassword: '/api/user/restorePassword',
                 getInfo: '/api/user/getInfo',
                 edit: '/api/user/edit',
@@ -83,6 +84,7 @@ const ApiConfig = {
             user: {
                 login1: '/test_json/login.json',
                 login2: '/test_json/login.json',
+                vkAuth: '/api/user/vkAuth',
                 getInfo: '/test_json/user.json',
                 edit: '/test_json/user.json',
                 getAll: '/test_json/users.json',

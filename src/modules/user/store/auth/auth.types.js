@@ -6,6 +6,8 @@ export const initAuth = 'initAuth';
 export const restorePassword = 'restorePassword';
 export const setWhetherUserExists = 'setWhetherUserExists';
 export const userExists = 'userExists';
+export const afterAuth = 'afterAuth';
+export const vkAuth = 'vkAuth';
 
 
 

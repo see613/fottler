@@ -1,16 +1,18 @@
 import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
 import {
+    afterAuth,
     initAuth,
     login,
     logout,
     restorePassword, setWhetherUserExists,
     submitLogin1,
-    submitLogin2, userExists
+    submitLogin2, userExists, vkAuth
 } from "@/modules/user/store/auth/auth.types";
 import {resetFields} from "@/store/types";
 import router from '@/router'
 import TokenAuth from "@/core/TokenAuth";
+import {loadUserInfo} from "@/modules/user/store/user/user.types";
 
 const actions = {
     [ initAuth ](){
@@ -59,6 +61,23 @@ const actions = {
             }
         }
         return false;
+    },
+    async [ vkAuth ]({ commit }, session){
+        return await VuexFormHelper.save(commit, session, User.vkAuth);
+    },
+    async [ afterAuth ]({ dispatch, getters }, serverData){
+        await dispatch(login, {
+            accessToken: serverData['access_token'],
+            refreshToken: serverData['refresh_token']
+        });
+        await dispatch('user/'+loadUserInfo, null, {root:true});
+
+        if(getters.profileIsNotFilled){
+            router.push('/profile/edit');
+        }
+        else{
+            router.push('/');
+        }
     },
     async [ restorePassword ]({ commit, state }){
         const userData = {email: state.email};

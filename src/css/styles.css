@@ -27,12 +27,12 @@
   src: url("/css/fonts/gilroy/Gilroy-ExtraBold.eot");
   src: url("/css/fonts/gilroy/Gilroy-ExtraBold.otf") format("opentype"), url("/css/fonts/gilroy/Gilroy-ExtraBold.eot?#iefix") format("embedded-opentype"), url("/css/fonts/gilroy/Gilroy-ExtraBold.woff") format("woff"), url("/css/fonts/gilroy/Gilroy-ExtraBold.ttf") format("truetype");
 }
-/* line 6, ../sass/_common.sass */
+/* line 3, ../sass/_common.sass */
 html {
   font-size: 100%;
 }
 
-/* line 8, ../sass/_common.sass */
+/* line 5, ../sass/_common.sass */
 body {
   position: relative;
   font-size: 100%;
@@ -43,11 +43,11 @@ body {
   background: #f0f0f0;
 }
 
-/* line 16, ../sass/_common.sass */
+/* line 13, ../sass/_common.sass */
 a {
   text-decoration: none;
 }
-/* line 19, ../sass/_common.sass */
+/* line 16, ../sass/_common.sass */
 a.button {
   text-align: center;
   display: inline-block;
@@ -59,29 +59,29 @@ a.button {
   color: #000000;
   font-size: 14px;
 }
-/* line 30, ../sass/_common.sass */
+/* line 27, ../sass/_common.sass */
 a.button.yellow-button {
   border: none;
   background-color: #e7b848;
 }
-/* line 34, ../sass/_common.sass */
+/* line 31, ../sass/_common.sass */
 a.button.yellow-button.disabled {
   background: #f3dba3;
   color: #35364f;
 }
-/* line 37, ../sass/_common.sass */
+/* line 34, ../sass/_common.sass */
 a.button.wide {
   width: 220px;
 }
-/* line 39, ../sass/_common.sass */
+/* line 36, ../sass/_common.sass */
 a.button.wide1 {
   width: 160px;
 }
-/* line 41, ../sass/_common.sass */
+/* line 38, ../sass/_common.sass */
 a.button.small-padding {
   padding: 6px 15px 0;
 }
-/* line 43, ../sass/_common.sass */
+/* line 40, ../sass/_common.sass */
 a.button.fixed-add-button {
   position: fixed;
   bottom: 28px;
@@ -96,36 +96,41 @@ a.button.fixed-add-button {
   background-size: 12px 12px;
   z-index: 1;
 }
-/* line 54, ../sass/_common.sass */
+/* line 51, ../sass/_common.sass */
 a.button.fixed-add-button:hover, a.button.fixed-add-button:focus {
   color: #000000;
 }
-/* line 56, ../sass/_common.sass */
+/* line 53, ../sass/_common.sass */
 a.underlined {
   text-decoration: underline;
 }
-/* line 58, ../sass/_common.sass */
+/* line 55, ../sass/_common.sass */
 a:hover, a:focus {
   text-decoration: none;
 }
 
-/* line 61, ../sass/_common.sass */
+/* line 58, ../sass/_common.sass */
 h1 {
   font-size: 20px;
   color: #35364f;
   margin-bottom: 5px;
 }
 
-/* line 65, ../sass/_common.sass */
+/* line 62, ../sass/_common.sass */
 h2 {
   font-size: 18px;
   margin-bottom: 0;
 }
 
-/* line 70, ../sass/_common.sass */
+/* line 67, ../sass/_common.sass */
 p.description {
   font-size: 13px;
   line-height: 16px;
+}
+
+/* line 71, ../sass/_common.sass */
+.ib {
+  display: inline-block;
 }
 
 /* line 74, ../sass/_common.sass */
@@ -178,84 +183,89 @@ p.description {
 }
 
 /* line 99, ../sass/_common.sass */
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* line 101, ../sass/_common.sass */
 .mb-25 {
   margin-bottom: 25px;
 }
 
-/* line 101, ../sass/_common.sass */
+/* line 103, ../sass/_common.sass */
 .mb-20 {
   margin-bottom: 20px;
 }
 
-/* line 103, ../sass/_common.sass */
+/* line 105, ../sass/_common.sass */
 .mb-15 {
   margin-bottom: 15px;
 }
 
-/* line 105, ../sass/_common.sass */
+/* line 107, ../sass/_common.sass */
 .mb-10 {
   margin-bottom: 10px;
 }
 
-/* line 108, ../sass/_common.sass */
+/* line 110, ../sass/_common.sass */
 .mr-10 {
   margin-right: 10px !important;
 }
 
-/* line 110, ../sass/_common.sass */
+/* line 112, ../sass/_common.sass */
 .mr-5 {
   margin-right: 5px !important;
 }
 
-/* line 113, ../sass/_common.sass */
+/* line 115, ../sass/_common.sass */
 .pb-12 {
   padding-bottom: 12px !important;
 }
 
-/* line 116, ../sass/_common.sass */
+/* line 118, ../sass/_common.sass */
 .font-18 {
   font-size: 18px;
 }
 
-/* line 118, ../sass/_common.sass */
+/* line 120, ../sass/_common.sass */
 .font-16 {
   font-size: 16px;
 }
 
-/* line 120, ../sass/_common.sass */
+/* line 122, ../sass/_common.sass */
 .font-14 {
   font-size: 14px;
 }
 
-/* line 122, ../sass/_common.sass */
+/* line 124, ../sass/_common.sass */
 .font-12 {
   font-size: 12px;
 }
 
-/* line 125, ../sass/_common.sass */
+/* line 127, ../sass/_common.sass */
 .padding-around {
   padding: 20px 15px;
 }
 
-/* line 128, ../sass/_common.sass */
+/* line 130, ../sass/_common.sass */
 .bb {
   border-bottom: 1px solid #e8e8e8;
 }
 
-/* line 131, ../sass/_common.sass */
+/* line 133, ../sass/_common.sass */
 .text-line-through {
   font-size: 12px;
   text-align: center;
   position: relative;
 }
-/* line 136, ../sass/_common.sass */
+/* line 138, ../sass/_common.sass */
 .text-line-through > span {
   position: relative;
   padding-left: 5px;
   padding-right: 5px;
   background: #ffffff;
 }
-/* line 141, ../sass/_common.sass */
+/* line 143, ../sass/_common.sass */
 .text-line-through:before {
   content: "";
   position: absolute;
@@ -265,7 +275,7 @@ p.description {
   width: 100%;
 }
 
-/* line 149, ../sass/_common.sass */
+/* line 151, ../sass/_common.sass */
 .truncate-text {
   width: 100%;
   white-space: nowrap;
@@ -274,7 +284,7 @@ p.description {
   text-overflow: ellipsis;
 }
 
-/* line 157, ../sass/_common.sass */
+/* line 159, ../sass/_common.sass */
 .body-inner {
   position: relative;
   background: #ffffff;
@@ -288,34 +298,34 @@ p.description {
   box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* line 168, ../sass/_common.sass */
+/* line 170, ../sass/_common.sass */
 .map-sidebar .content {
   border-top: none !important;
 }
-/* line 171, ../sass/_common.sass */
+/* line 173, ../sass/_common.sass */
 .map-sidebar .content .map {
   height: 350px;
   background: #e8e8e8;
 }
-/* line 174, ../sass/_common.sass */
+/* line 176, ../sass/_common.sass */
 .map-sidebar.home-map-sidebar {
   z-index: 5;
 }
 
-/* line 177, ../sass/_common.sass */
+/* line 179, ../sass/_common.sass */
 .social-share-headline {
   margin-left: -17px;
   margin-right: -17px;
   margin-top: 20px;
 }
 
-/* line 182, ../sass/_common.sass */
+/* line 184, ../sass/_common.sass */
 .social-share-wrapper {
   margin-top: 15px;
   text-align: center;
   font-size: 24px;
 }
-/* line 187, ../sass/_common.sass */
+/* line 189, ../sass/_common.sass */
 .social-share-wrapper > span {
   margin-right: 15px;
   cursor: pointer;
@@ -326,14 +336,14 @@ p.description {
   height: 25px;
   display: inline-block;
 }
-/* line 197, ../sass/_common.sass */
+/* line 199, ../sass/_common.sass */
 .social-share-wrapper > span i {
   color: #ffffff;
   font-size: 17px;
   vertical-align: super;
 }
-/* line 202, ../sass/_common.sass */
-.social-share-wrapper > span i:last-child {
+/* line 203, ../sass/_common.sass */
+.social-share-wrapper > span:last-child {
   margin-right: 0;
 }
 
@@ -2239,6 +2249,24 @@ label.radio-wrapper.wide .radio {
 #login-wrapper tr:last-child td .link {
   text-decoration: underline;
   color: #000000;
+}
+/* line 37, ../sass/pages/_login.sass */
+#login-wrapper tr:last-child td .vk-auth {
+  cursor: pointer;
+  background: #4c5157;
+  border-radius: 7px;
+  padding: 3px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 3px;
+}
+/* line 48, ../sass/pages/_login.sass */
+#login-wrapper tr:last-child td .vk-auth i {
+  color: #ffffff;
+  font-size: 17px;
+  vertical-align: super;
 }
 
 /* line 4, ../sass/pages/_notifications.sass */

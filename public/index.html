@@ -45,6 +45,23 @@
     <link rel="apple-touch-startup-image" href="<%= BASE_URL %>images/favicons/apple-splash-1136-640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
 </head>
 <body>
+    <div id="vk_api_transport"></div>
+    <script type="text/javascript">
+        window.vkAsyncInit = function() {
+            window.VK.init({
+                apiId: 7421807
+            });
+        };
+
+        setTimeout(function() {
+            const el = document.createElement("script");
+            el.type = "text/javascript";
+            el.src = "https://vk.com/js/api/openapi.js?167";
+            el.async = true;
+            document.getElementById("vk_api_transport").appendChild(el);
+        }, 0);
+    </script>
+
     <noscript>
       <strong>К сожалению приложение Вилка и Бутылка не работает без JavaScript. Пожалуйста, включите его, чтобы продолжить.</strong>
     </noscript>

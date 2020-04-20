@@ -53,12 +53,10 @@
     import Error from "@/components/forms/Error";
     import { createHelpers } from 'vuex-map-fields';
     import { createNamespacedHelpers } from 'vuex'
-    import {login, submitLogin2} from "@/modules/user/store/auth/auth.types";
-    import {loadUserInfo} from "@/modules/user/store/user/user.types";
+    import {afterAuth, submitLogin2} from "@/modules/user/store/auth/auth.types";
     import MenuSwitcher from "@/components/menu/MenuSwitcher";
 
-    const { mapActions: mapUserActions } = createNamespacedHelpers('user');
-    const { mapState, mapGetters, mapActions } = createNamespacedHelpers('auth');
+    const { mapState, mapActions } = createNamespacedHelpers('auth');
     const { mapFields } = createHelpers({
         getterType: 'auth/getField',
         mutationType: 'auth/updateField',
@@ -69,7 +67,6 @@
         components: {MenuSwitcher, Error},
         computed: {
             ...mapState(['errors', 'userExists']),
-            ...mapGetters(['profileIsNotFilled']),
             ...mapFields(['email', 'password', 'passwordRepeat'])
         },
         created(){
@@ -82,22 +79,10 @@
                 const result = await this[submitLogin2]();
 
                 if(result){
-                    this[login]({
-                        accessToken: result.access_token,
-                        refreshToken: result.refresh_token
-                    });
-                    await this[loadUserInfo]();
-
-                    if(this.profileIsNotFilled){
-                        this.$router.push('/profile/edit');
-                    }
-                    else{
-                        this.$router.push('/');
-                    }
+                    await this[afterAuth](result);
                 }
             },
-            ...mapActions([ submitLogin2, login ]),
-            ...mapUserActions([ loadUserInfo ])
+            ...mapActions([ submitLogin2, afterAuth ])
         }
     }
 </script>
