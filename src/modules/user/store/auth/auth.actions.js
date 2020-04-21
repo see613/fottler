@@ -27,10 +27,10 @@ const actions = {
     },
 
     async [ submitLogin1 ]({ commit, state }){
-        const userData = {email: state.email};
+        const email = state.email;
 
-        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.login1)){
-            const result = await VuexFormHelper.save(commit, userData, User.login1);
+        if(VuexFormHelper.validateOnClient(commit, {email}, User.validationRules.login1)){
+            const result = await VuexFormHelper.save(commit, email, User.login1);
 
             if(result){
                 commit(setWhetherUserExists, result.user_exists);

@@ -1,6 +1,6 @@
 const ApiConfig = {
     production: {
-        baseUrl: 'http://fottler',
+        baseUrl: 'http://api.fottler.com',
         urls: {
             event: {
                 add: '/api/event/add',
