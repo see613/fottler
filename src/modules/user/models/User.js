@@ -41,6 +41,10 @@ export default class User extends Model {
             unread_notifications: 0
         }
     };
+    static passwordValidationRules =
+        yup.string().trim()
+            .required(Config.error.isEmpty)
+            .min(6, 'Минимум 6 символов');
     static validationRules = {
         edit: {
             name: yup.string().ensure().trim().required(Config.error.isEmpty),
@@ -74,12 +78,10 @@ export default class User extends Model {
                 .email('Не правильный формат Email')
         },
         login2: {
-            password: yup.string().trim()
-                .required(Config.error.isEmpty)
+            password: User.passwordValidationRules
         },
         login2Guest: {
-            password: yup.string().trim()
-                .required(Config.error.isEmpty),
+            password: User.passwordValidationRules,
             passwordRepeat: yup.string().trim()
                 .test(
                     'passwordRepeatIsCorrect',

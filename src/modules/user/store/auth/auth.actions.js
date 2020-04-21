@@ -67,8 +67,8 @@ const actions = {
     },
     async [ afterAuth ]({ dispatch, getters }, serverData){
         await dispatch(login, {
-            accessToken: serverData['access_token'],
-            refreshToken: serverData['refresh_token']
+            accessToken: serverData.accessToken,
+            refreshToken: serverData.refreshToken
         });
         await dispatch('user/'+loadUserInfo, null, {root:true});
 
