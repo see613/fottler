@@ -35,7 +35,7 @@ const ApiConfig = {
             user: {
                 login1: '/api/user/emailAuth1',
                 login2: '/api/user/emailAuth2',
-                vkAuth: '/api/social-auth/vk',
+                vkAuth: '/api/social-auth/vkontakte',
                 restorePassword: '/api/user/restorePassword',
                 getInfo: '/api/user/getInfo',
                 edit: '/api/user/edit',
