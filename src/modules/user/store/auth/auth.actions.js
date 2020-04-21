@@ -80,10 +80,10 @@ const actions = {
         }
     },
     async [ restorePassword ]({ commit, state }){
-        const userData = {email: state.email};
+        const email = state.email;
 
-        if(VuexFormHelper.validateOnClient(commit, userData, User.validationRules.restorePassword)){
-            const result = await VuexFormHelper.save(commit, userData, User.restorePassword);
+        if(VuexFormHelper.validateOnClient(commit, {email}, User.validationRules.restorePassword)){
+            const result = await VuexFormHelper.save(commit, email, User.restorePassword);
 
             if(result){
                 commit(setWhetherUserExists, true);
