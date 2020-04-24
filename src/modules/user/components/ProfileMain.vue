@@ -9,7 +9,7 @@
             <td>
                 <div>{{user.name}}, {{age}}</div>
                 <div class="font-12"
-                     v-if="isMyself">{{formattedPhone}}</div>
+                     v-if="isMyself && user.phone">{{formattedPhone}}</div>
                 <div class="city"
                      v-if="user.city">{{user.city}}</div>
 

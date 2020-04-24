@@ -46,10 +46,6 @@
                     <error :text="errors.vk"
                            class="center"></error>
                 </div>
-
-                <div class="mb-15">
-                    <a href="#" @click.prevent="test">GET-запрос</a>
-                </div>
             </td>
         </tr>
     </table>
@@ -62,8 +58,6 @@
     import {afterAuth, submitLogin1, vkAuth} from "@/modules/user/store/auth/auth.types";
     import MenuSwitcher from "@/components/menu/MenuSwitcher";
     import VkAuth from "@/components/VkAuth";
-    import ServerRequest from "@/core/ServerRequest";
-    import ApiConfig from "@/config/ApiConfig";
 
     const { mapState, mapActions } = createNamespacedHelpers('auth');
     const { mapFields } = createHelpers({
@@ -79,13 +73,6 @@
             ...mapFields(['email'])
         },
         methods: {
-
-            async test(){
-                await ServerRequest.get(ApiConfig.urls.user.vkAuth, {
-                    test: 'test'
-                });
-            },
-
             async onSubmit(){
                 await this[submitLogin1]();
             },
