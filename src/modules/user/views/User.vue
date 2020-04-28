@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="profile-preferences">
+        <!--<div class="profile-preferences">
             <profile-preferences v-if="user.food_preferences"
                                  headline="Предпочтения в еде:"
                                  item-class="grey-tag"
@@ -28,7 +28,7 @@
                                  headline="Предпочтения в напитках:"
                                  item-class="bordered-tag"
                                  :items="drinks(user.id)"></profile-preferences>
-        </div>
+        </div>-->
 
         <table-sidebar class="right-sidebar w-100"
                        :headline="user.name"

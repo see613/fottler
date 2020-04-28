@@ -1313,12 +1313,17 @@ p.description {
   cursor: pointer;
 }
 /* line 81, ../sass/components/_form.sass */
+.open-sidebar .tip {
+  font-size: 14px;
+  color: #bcbcbc;
+}
+/* line 84, ../sass/components/_form.sass */
 .open-sidebar .value {
   margin-top: -3px;
   font-size: 12px;
   color: #bcbcbc;
 }
-/* line 85, ../sass/components/_form.sass */
+/* line 88, ../sass/components/_form.sass */
 .open-sidebar .arrow {
   position: absolute;
   top: 5px;
@@ -1327,7 +1332,7 @@ p.description {
   height: 18px;
 }
 
-/* line 92, ../sass/components/_form.sass */
+/* line 95, ../sass/components/_form.sass */
 textarea.default {
   width: 100%;
   border: 1px solid #c3c3c3;
@@ -1357,7 +1362,7 @@ textarea.default::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 104, ../sass/components/_form.sass */
+/* line 107, ../sass/components/_form.sass */
 input[type=text].grey-input,
 input[type=password].grey-input {
   border: none;
@@ -1393,13 +1398,13 @@ input[type=password].grey-input::-webkit-input-placeholder {
   text-align: center;
 }
 
-/* line 118, ../sass/components/_form.sass */
+/* line 121, ../sass/components/_form.sass */
 .file-uploads {
   display: block !important;
   margin: 10px auto 0;
   width: 80px;
 }
-/* line 123, ../sass/components/_form.sass */
+/* line 126, ../sass/components/_form.sass */
 .file-uploads .upload-image {
   height: 80px;
   border-radius: 5px;
@@ -1407,7 +1412,7 @@ input[type=password].grey-input::-webkit-input-placeholder {
   background-size: 25px 25px;
   overflow: hidden;
 }
-/* line 130, ../sass/components/_form.sass */
+/* line 133, ../sass/components/_form.sass */
 .file-uploads .upload-image img {
   position: relative;
   height: 100%;
@@ -1418,44 +1423,44 @@ input[type=password].grey-input::-webkit-input-placeholder {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-/* line 136, ../sass/components/_form.sass */
+/* line 139, ../sass/components/_form.sass */
 .file-uploads label {
   cursor: pointer;
 }
-/* line 139, ../sass/components/_form.sass */
+/* line 142, ../sass/components/_form.sass */
 .file-uploads.upload-avatar .upload-image {
   background-image: url(/images/icons/avatar.svg);
   border-radius: 100%;
   background-size: 64px 64px;
 }
 
-/* line 144, ../sass/components/_form.sass */
+/* line 147, ../sass/components/_form.sass */
 .error {
   color: #f20f0f;
   font-size: 12px;
   text-align: left;
   margin-top: 5px;
 }
-/* line 151, ../sass/components/_form.sass */
+/* line 154, ../sass/components/_form.sass */
 .error.center {
   text-align: center;
 }
-/* line 153, ../sass/components/_form.sass */
+/* line 156, ../sass/components/_form.sass */
 .error.pl {
   padding-left: 28px;
 }
 
-/* line 156, ../sass/components/_form.sass */
+/* line 159, ../sass/components/_form.sass */
 .field-description {
   font-size: 12px;
   text-align: left;
   color: #bcbcbc;
 }
-/* line 161, ../sass/components/_form.sass */
+/* line 164, ../sass/components/_form.sass */
 .field-description.red {
   color: #f20f0f;
 }
-/* line 163, ../sass/components/_form.sass */
+/* line 166, ../sass/components/_form.sass */
 .field-description.pl {
   padding-left: 28px;
 }

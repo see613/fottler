@@ -29,9 +29,9 @@
                    :class="{disabled: !isOwnerOrMember}"
                    @click.prevent="isOwnerOrMember && $emit('open-members', event.id)">посмотреть участников</a>
             </div>
-            <div class="preferences-wrapper">
+            <!--<div class="preferences-wrapper">
                 {{foodString}}, {{drinksString}}
-            </div>
+            </div>-->
             <div class="button-wrapper">
                 <a v-if="isOwnerOrMember"
                    href="#"

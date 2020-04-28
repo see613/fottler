@@ -2,7 +2,11 @@
     <div class="open-sidebar"
          @click.prevent="$emit('click')">
 
-        <div class="headline">{{title}}</div>
+        <div class="headline">
+            {{title}}
+            <span class="tip"
+                  v-if="optional">(необязательно)</span>
+        </div>
         <div class="value">{{value}}</div>
 
         <img src="/images/icons/dropdown-right.svg" alt="" class="arrow">
@@ -14,7 +18,11 @@
         name: 'FormSidebarSwitcher',
         props: {
             title: String,
-            value: String
+            value: String,
+            optional: {
+                type: Boolean,
+                default: false
+            },
         }
     }
 </script>

@@ -19,7 +19,7 @@
             <error :text="errors.category"></error>
         </list-row>
 
-        <list-row class="bb"
+        <!--<list-row class="bb"
                   icon="food"
                   icon-width="20"
                   icon-top="12"
@@ -38,7 +38,7 @@
                                    :value="drinksString"
                                    @click="showSidebar(sidebar.drink_preferences.type)"></form-sidebar-switcher>
             <error :text="errors.drink_preferences"></error>
-        </list-row>
+        </list-row>-->
 
         <list-row class="right bb"
                   icon="date"
@@ -73,6 +73,7 @@
                   icon-top="12">
             <form-sidebar-switcher title="Адрес"
                                    :value="address"
+                                   :optional="true"
                                    @click="showSidebar(sidebar.address.type)"></form-sidebar-switcher>
             <error :text="errors.address"></error>
         </list-row>

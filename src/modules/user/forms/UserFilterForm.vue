@@ -18,7 +18,7 @@
         </list-row>
         -->
 
-        <list-row icon="food"
+        <!--<list-row icon="food"
                   icon-width="20"
                   icon-top="12"
                   icon-left="13">
@@ -33,7 +33,7 @@
             <form-sidebar-switcher title="Предпочтения в напитках"
                                    :value="drinksString"
                                    @click="showSidebar(sidebar.drink_preferences.type)"></form-sidebar-switcher>
-        </list-row>
+        </list-row>-->
 
         <list-row class="right"
                   icon="gender"

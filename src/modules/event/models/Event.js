@@ -48,10 +48,10 @@ export default class Event extends Model {
                     function(){
                         return DateUtil.isValid(this.parent.datetime) && DateUtil.isValidForMysql(this.parent.datetime);
                     }),
-            address: yup.string().trim().required(Config.error.isEmpty),
+            address: yup.string().trim(),//.required(Config.error.isEmpty),
             category: yup.array().required(Config.error.isNotChosen),
-            food_preferences: yup.array().required(Config.error.isNotChosen),
-            drink_preferences: yup.array().required(Config.error.isNotChosen),
+            //food_preferences: yup.array().required(Config.error.isNotChosen),
+            //drink_preferences: yup.array().required(Config.error.isNotChosen),
             max_males_number: yup.number()
                 .required('Выберите количество мужчин')
                 .integer('Количество мужчин должно быть числом')

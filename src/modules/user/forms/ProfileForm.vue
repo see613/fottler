@@ -36,7 +36,7 @@
             <error :text="errors.geolocation"></error>
         </list-row>
 
-        <list-row class="bb">
+        <!--<list-row class="bb">
             <form-sidebar-switcher title="Предпочтения в еде"
                                    :value="foodString"
                                    @click="showSidebar(sidebar.food_preferences.type)"></form-sidebar-switcher>
@@ -54,7 +54,7 @@
                             label-class="mr-10"></input-list>
                 <error :text="errors.drink_preferences"></error>
             </div>
-        </list-row>
+        </list-row>-->
 
         <list-row class="bb">
             <form-sidebar-switcher title="Расскажите о себе"

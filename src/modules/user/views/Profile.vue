@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="profile-preferences">
+        <!--<div class="profile-preferences">
             <profile-preferences headline="Предпочтения в еде:"
                                  item-class="grey-tag"
                                  :items="food"></profile-preferences>
@@ -30,7 +30,7 @@
             <profile-preferences headline="Предпочтения в напитках:"
                                  item-class="bordered-tag"
                                  :items="drinks"></profile-preferences>
-        </div>
+        </div>-->
     </div>
 </template>
 

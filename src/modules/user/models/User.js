@@ -58,8 +58,8 @@ export default class User extends Model {
                         return DateUtil.isValid(this.parent.birthday) && DateUtil.isBeforeToday(this.parent.birthday);
                     }),
             gender: yup.number().required(Config.error.isNotChosen),
-            food_preferences: yup.array().required(Config.error.isNotChosen),
-            drink_preferences: yup.array()
+            //food_preferences: yup.array().required(Config.error.isNotChosen),
+            /*drink_preferences: yup.array()
                 .required(Config.error.isNotChosen)
                 .test(
                     'alcoholRequiresAdulthood',
@@ -69,7 +69,7 @@ export default class User extends Model {
                             || User.isAdult(this.parent.birthday)
                             || !User.alcoholIsInDrinkPreferences(this.parent.drink_preferences);
                     })
-            ,
+            ,*/
             avatar: yup.string().ensure().required('Загрузите ваш аватар'),
         },
         login1: {
