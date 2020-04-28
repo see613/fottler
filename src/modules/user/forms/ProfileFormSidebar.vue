@@ -18,6 +18,12 @@
                       class="w-100"
                       placeholder="Здесь будет рассказ о себе в нескольких предложениях или в одном"></textarea>
         </list-row>
+
+        <div class="button-wrapper">
+            <a href="#"
+               class="button yellow-button"
+               @click.prevent="$emit('hide-sidebar')">OK</a>
+        </div>
     </Sidebar>
 </template>
 

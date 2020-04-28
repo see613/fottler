@@ -10,7 +10,8 @@
                            @show-sidebar="showSidebar"
                            @show-modal="showModal"></event-create-form>
 
-        <event-create-form-sidebar :sidebar="sidebar"></event-create-form-sidebar>
+        <event-create-form-sidebar :sidebar="sidebar"
+                                   @hide-sidebar="hideSidebar"></event-create-form-sidebar>
 
         <Modal class="service-modal"
                v-model="modal.shown">

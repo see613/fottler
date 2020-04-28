@@ -804,6 +804,12 @@ p.description {
   border-top: 2px solid #f0f0f0;
 }
 /* line 43, ../sass/components/_sidebar.sass */
+.sidebar-wrapper > .sidebar-inner > .content .button-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+/* line 48, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.w-100 > .sidebar-inner {
   left: -320px;
   width: 100%;
@@ -812,7 +818,7 @@ p.description {
   -webkit-animation: close-wide-sidebar 0.3s linear;
   animation: close-wide-sidebar 0.3s linear;
 }
-/* line 49, ../sass/components/_sidebar.sass */
+/* line 54, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.right-sidebar > .sidebar-inner {
   left: auto !important;
   right: -250px;
@@ -820,42 +826,42 @@ p.description {
   -webkit-animation: close-right-sidebar 0.3s linear;
   animation: close-right-sidebar 0.3s linear;
 }
-/* line 54, ../sass/components/_sidebar.sass */
+/* line 59, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.right-sidebar.w-100 > .sidebar-inner {
   right: -320px;
   -moz-animation: close-wide-right-sidebar 0.3s linear;
   -webkit-animation: close-wide-right-sidebar 0.3s linear;
   animation: close-wide-right-sidebar 0.3s linear;
 }
-/* line 58, ../sass/components/_sidebar.sass */
+/* line 63, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.h-100-sidebar > .sidebar-inner {
   height: 100%;
 }
-/* line 61, ../sass/components/_sidebar.sass */
+/* line 66, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.h-100-sidebar > .sidebar-inner > table {
   width: 100%;
   height: 100%;
 }
-/* line 65, ../sass/components/_sidebar.sass */
+/* line 70, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.h-100-sidebar > .sidebar-inner > table .header {
   height: 49px;
 }
-/* line 67, ../sass/components/_sidebar.sass */
+/* line 72, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.h-100-sidebar > .sidebar-inner > table .content {
   padding: 0;
   vertical-align: top;
   border-top: none;
 }
-/* line 72, ../sass/components/_sidebar.sass */
+/* line 77, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.h-100-sidebar > .sidebar-inner > table .content > * {
   height: 100%;
   border-top: 2px solid #f0f0f0;
 }
-/* line 75, ../sass/components/_sidebar.sass */
+/* line 80, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.navigation {
   z-index: 30;
 }
-/* line 77, ../sass/components/_sidebar.sass */
+/* line 82, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.opened {
   left: 0;
   background: rgba(0, 0, 0, 0.1);
@@ -864,27 +870,27 @@ p.description {
   -webkit-transition: left 0s, background 0.3s linear;
   transition: left 0s, background 0.3s linear;
 }
-/* line 82, ../sass/components/_sidebar.sass */
+/* line 87, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.opened > .sidebar-inner {
   left: 0;
   -moz-animation: open-sidebar 0.3s linear;
   -webkit-animation: open-sidebar 0.3s linear;
   animation: open-sidebar 0.3s linear;
 }
-/* line 88, ../sass/components/_sidebar.sass */
+/* line 93, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.opened.right-sidebar > .sidebar-inner {
   right: 0;
   -moz-animation: open-right-sidebar 0.3s linear;
   -webkit-animation: open-right-sidebar 0.3s linear;
   animation: open-right-sidebar 0.3s linear;
 }
-/* line 92, ../sass/components/_sidebar.sass */
+/* line 97, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.opened.w-100 > .sidebar-inner {
   -moz-animation: open-wide-sidebar 0.3s linear;
   -webkit-animation: open-wide-sidebar 0.3s linear;
   animation: open-wide-sidebar 0.3s linear;
 }
-/* line 95, ../sass/components/_sidebar.sass */
+/* line 100, ../sass/components/_sidebar.sass */
 .sidebar-wrapper.opened.right-sidebar.w-100 > .sidebar-inner {
   -moz-animation: open-wide-right-sidebar 0.3s linear;
   -webkit-animation: open-wide-right-sidebar 0.3s linear;

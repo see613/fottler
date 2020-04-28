@@ -52,6 +52,12 @@
                                        :lng="lng"
                                        @update="updateAddress"></event-create-form-address>
         </div>
+
+        <div class="button-wrapper">
+            <a href="#"
+               class="button yellow-button"
+               @click.prevent="$emit('hide-sidebar')">OK</a>
+        </div>
     </Sidebar>
 </template>
 

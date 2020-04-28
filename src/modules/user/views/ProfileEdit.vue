@@ -15,7 +15,8 @@
                       @show-sidebar="showSidebar"
                       @show-modal="showModal"></profile-form>
 
-        <profile-form-sidebar :sidebar="sidebar"></profile-form-sidebar>
+        <profile-form-sidebar :sidebar="sidebar"
+                              @hide-sidebar="hideSidebar"></profile-form-sidebar>
 
         <Modal class="service-modal"
                v-model="modal.shown">

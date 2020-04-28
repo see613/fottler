@@ -4,7 +4,8 @@
                           @show-sidebar="showSidebar"
                           @hide-filter="$emit('hide-filter')"></user-filter-form>
 
-        <user-filter-sidebar :sidebar="sidebar"></user-filter-sidebar>
+        <user-filter-sidebar :sidebar="sidebar"
+                             @hide-sidebar="hideSidebar"></user-filter-sidebar>
     </div>
 </template>
 

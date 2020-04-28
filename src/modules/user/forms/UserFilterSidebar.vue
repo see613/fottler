@@ -25,6 +25,12 @@
                         type="radio"
                         label-class="wide bb"></input-list>
         </div>
+
+        <div class="button-wrapper">
+            <a href="#"
+               class="button yellow-button"
+               @click.prevent="$emit('hide-sidebar')">OK</a>
+        </div>
     </Sidebar>
 </template>
 
