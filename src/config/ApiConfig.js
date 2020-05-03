@@ -98,7 +98,7 @@ const ApiConfig = {
         }
     }
 };
-ApiConfig.development2 = ApiConfig.production;
+ApiConfig.development2 = {...ApiConfig.production};
 ApiConfig.development2.baseUrl = 'http://fottler';
 
 
