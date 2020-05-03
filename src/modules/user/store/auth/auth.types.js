@@ -8,6 +8,7 @@ export const setWhetherUserExists = 'setWhetherUserExists';
 export const userExists = 'userExists';
 export const afterAuth = 'afterAuth';
 export const vkAuth = 'vkAuth';
+export const activateEmail = 'activateEmail';
 
 
 

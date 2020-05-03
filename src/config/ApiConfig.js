@@ -36,6 +36,7 @@ const ApiConfig = {
                 login1: '/api/user/emailAuth1',
                 login2: '/api/user/emailAuth2',
                 vkAuth: '/api/social-auth/vkontakte',
+                activateEmail: '/api/activation/[code]',
                 restorePassword: '/api/user/restorePassword',
                 getInfo: '/api/user/getInfo',
                 edit: '/api/user/edit',
@@ -97,4 +98,8 @@ const ApiConfig = {
         }
     }
 };
+ApiConfig.development2 = ApiConfig.production;
+ApiConfig.development2.baseUrl = 'http://fottler';
+
+
 export default ApiConfig.production;//todo [process.env.NODE_ENV];

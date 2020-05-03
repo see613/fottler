@@ -127,6 +127,11 @@ const router = new Router({
             component: () => import('./modules/user/views/RestorePassword.vue'),
         },
         {
+            path: '/api/activation/:code',
+            name: 'email-activation',
+            component: () => import('./modules/user/views/EmailActivation.vue')
+        },
+        {
             path: '/error404',
             name: 'error404',
             component: () => import('./views/Error404.vue')

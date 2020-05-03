@@ -1,6 +1,7 @@
 import VuexFormHelper from "@/core/form/VuexFormHelper";
 import User from "@/modules/user/models/User";
 import {
+    activateEmail,
     afterAuth,
     initAuth,
     login,
@@ -61,6 +62,9 @@ const actions = {
             }
         }
         return false;
+    },
+    async [ activateEmail ]({ commit }, code){
+        return await VuexFormHelper.save(commit, code, User.activateEmail);
     },
     async [ vkAuth ]({ commit }, session){
         return await VuexFormHelper.save(commit, session, User.vkAuth);

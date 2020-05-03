@@ -129,6 +129,13 @@ export default class User extends Model {
             password
         });
     }
+    static async activateEmail(code){
+        return await ServerRequest.get(
+            ApiConfig.urls.user.activateEmail
+                .replace('[code]', code),
+            {}
+        );
+    }
     static async vkAuth(session){
         return await ServerRequest.post(ApiConfig.urls.user.vkAuth, session);
     }
